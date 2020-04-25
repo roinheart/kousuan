@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ZH">
+
+<head>
+    <meta charset="UTF-8">
+    <title>小娃口算</title>
+    <script type="text/javascript" src="/kousuan/js/getnums.js"></script>
+    <script type="text/javascript" src="/kousuan/js/gentable.js"></script>
+    <script type="text/javascript" src="/kousuan/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/kousuan/js/jQuery.print.js"></script>
+    <link rel="stylesheet" href="/kousuan/css/base.css">
+</head>
+
+<body>
+    <div class="main-block">
+        <div class="params-bar">
+            <ul>
+            	<li class="block">
+            		<span class="tit" style="text-align: center;">小娃口算</span>
+            	</li>
+                <li class="block">
+                    <span class="tit">
+                        算式数量
+                    </span>
+                    <span class="item-hd">
+                        加法数量：
+                    </span>
+                    <div class="item-bd">
+                        <input class="w50" type="text" id="add" oninput="value=value.replace(/[^\d]/g,'')" maxlength="5" value="5">
+                    </div>
+                    <span class="item-hd">
+                        减法数量：
+                    </span>
+                    <div class="item-bd">
+                        <input type="text" class="w50" id="minus" oninput="value=value.replace(/[^\d]/g,'')" maxlength="5" value="5">
+                    </div>
+                    <span class="item-hd">
+                        乘法数量:
+                    </span>
+                    <div class="item-bd">
+                        <input type="text" class="w50" id="mul" oninput="value=value.replace(/[^\d]/g,'')" maxlength="5" value="5">
+                    </div>
+                    <span class="item-hd">
+                        除法数量：
+                    </span>
+                    <div class="item-bd">
+                        <input type="text" class="w50" id="divi" oninput="value=value.replace(/[^\d]/g,'')" maxlength="5" value="35">
+                    </div>
+                    <span class="item-hd">除法有余：</span>
+                    <div class="item-bd">
+                        <select id="mod">
+                            <option value="1" selected>有</option>
+                            <option value="0">无</option>
+                        </select>
+                    </div>
+                </li>
+                <li>
+                    <span class="tit">
+                        算式数值范围
+                    </span>
+                </li>
+                <li>
+                    <span class="item-hd">
+                        加数1：
+                    </span>
+                    <div class="item-bd">
+                        <input type="text" class="w50" id="add_frist_min" oninput="value=value.replace(/[^\d]/g,'')" maxlength="5" value="99">
+                        至
+                        <input type="text" class="w50" id="add_frist_max" oninput="value=value.replace(/[^\d]/g,'')" maxlength="5" value="499">
+                    </div>
+                    <span class="item-hd">
+                        加数2：
+                    </span>
+                    <div class="item-bd">
+                        <input type="text" class="w50" id="add_second_min" oninput="value=value.replace(/[^\d]/g,'')" maxlength="5" value="99">
+                        至
+                        <input type="text" class="w50" id="add_second_max" oninput="value=value.replace(/[^\d]/g,'')" maxlength="5" value="499">
+                    </div>
+                </li>
+                <li>
+                    <span class="item-hd">
+                        减数：
+                    </span>
+                    <div class="item-bd">
+                        <input type="text" class="w50" id="minus_frist_min" oninput="value=value.replace(/[^\d]/g,'')" maxlength="5" value="99">
+                        至
+                        <input type="text" class="w50" id="minus_frist_max" oninput="value=value.replace(/[^\d]/g,'')" maxlength="5" value="499">
+                    </div>
+                    <span class="item-hd">
+                        被减数：
+                    </span>
+                    <div class="item-bd">
+                        <input type="text" class="w50" id="minus_second_min" oninput="value=value.replace(/[^\d]/g,'')" maxlength="5" value="99">
+                        至
+                        <input type="text" class="w50" id="minus_second_max" oninput="value=value.replace(/[^\d]/g,'')" maxlength="5" value="499">
+                    </div>
+                </li>
+                <li>
+                    <span class="item-hd">
+                        乘数1：
+                    </span>
+                    <div class="item-bd">
+                        <input type="text" class="w50" id="mul_frist_min" oninput="value=value.replace(/[^\d]/g,'')" maxlength="5" value="2">
+                        至
+                        <input type="text" class="w50" id="mul_frist_max" oninput="value=value.replace(/[^\d]/g,'')" maxlength="5" value="9">
+                    </div>
+                    <span class="item-hd">
+                        乘数2：
+                    </span>
+                    <div class="item-bd">
+                        <input type="text" class="w50" id="mul_second_min" oninput="value=value.replace(/[^\d]/g,'')" maxlength="5" value="2">
+                        至
+                        <input type="text" class="w50" id="mul_second_max" oninput="value=value.replace(/[^\d]/g,'')" maxlength="5" value="9">
+                    </div>
+                </li>
+                <li class="block">
+                    <span class="item-hd">
+                        除法1：
+                    </span>
+                    <div class="item-bd">
+                        <input type="text" class="w50" id="divi_frist_min" oninput="value=value.replace(/[^\d]/g,'')" maxlength="5" value="2">
+                        至
+                        <input type="text" class="w50" id="divi_frist_max" oninput="value=value.replace(/[^\d]/g,'')" maxlength="5" value="9">
+                    </div>
+                    <span class="item-hd">
+                        除法2：
+                    </span>
+                    <div class="item-bd">
+                        <input type="text" class="w50" id="divi_second_min" oninput="value=value.replace(/[^\d]/g,'')" maxlength="5" value="2">
+                        至
+                        <input type="text" class="w50" id="divi_second_max" oninput="value=value.replace(/[^\d]/g,'')" maxlength="5" value="9">
+                    </div>
+                </li>
+                <li class="btn-bar">
+                	<span class="btn btn-danger" id="print_btn" onclick="print()">打印</span>
+                    <span class="btn btn-info" id="gen_btn" onclick="setTable()">生成</span>
+                </li>
+            </ul>
+        </div>
+        <div class="contents" id="contents">
+        </div>
+    </div>
+</body>
+<script>
+let idx = 0;
+function print() {
+    $('#contents').print()
+}
+function setTable() {
+    let num = new Array(parseInt($("#add").val()), parseInt($('#minus').val()), parseInt($("#mul").val()), parseInt($("#divi").val()));
+    let rangeJson = {
+        add: [parseInt($('#add_frist_min').val()), parseInt($("#add_frist_max").val()), parseInt($('#add_second_min').val()), parseInt($("#add_second_max").val())],
+        minus: [parseInt($('#minus_frist_min').val()), parseInt($("#minus_frist_max").val()), parseInt($('#minus_second_min').val()), parseInt($("#minus_second_max").val())],
+        mul: [parseInt($('#mul_frist_min').val()), parseInt($("#mul_frist_max").val()), parseInt($('#mul_second_min').val()), parseInt($("#mul_second_max").val())],
+        divi: [parseInt($('#divi_frist_min').val()), parseInt($("#divi_frist_max").val()), parseInt($('#divi_second_min').val()), parseInt($("#divi_second_max").val())]
+    };
+    let ismod = $("#mod").val() == '0' ? false : true;
+    idx++;
+    let nums = new GetNums(num, rangeJson, ismod);
+    let table = new GenTable(idx, nums.optNums());
+    $('#contents').append(table.genTable());
+}
+</script>
+
+</html>

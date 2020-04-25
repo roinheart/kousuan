@@ -1,8 +1,9 @@
-#小娃口算
+# 小娃口算
 ---
-##这是一个坑娃神器
-##最开始写了一个版本放在index1.php里面
-##现在的index.html主要功能：
+![示例](https://raw.githubusercontent.com/roinheart/kousuan/master/index.png "示例")
+## 这是一个坑娃神器
+## 最开始写了一个版本放在index1.php里面
+## 现在的index.html主要功能：
 + 生成小学生口算算式
 + 可以设置加减乘除法数目
 + 可设置算式操作数的期望最大最小值
